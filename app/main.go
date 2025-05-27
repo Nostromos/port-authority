@@ -30,22 +30,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	// conn.Write() returns n, err where n is the number of bytes from your byteslice that weresuccessfully written to the connection
-	status := "HTTP/1.1 200 OK\r\n\r\n"
-	total := 0
-
-	for total < len(status) {
-		n, err := conn.Write([]byte(status))
-		total += n
-		if err != nil {
-			fmt.Println("ERROR: timed out or some other problem")
-			os.Exit(1)
-		}
-	}
-
 	// Extract URL path from HTTP request
 	buf := make([]byte, 4096)
 	n, err := conn.Read(buf)
+	// write loop that populates and ensures all data gets written into buffer
 	if err != nil {
 		fmt.Println("ERROR: Something bad happened while readin the connection")
 		os.Exit(1)
@@ -61,6 +49,42 @@ func main() {
 	headerText := string(headerBytes)
 	lines := strings.Split(headerText, "\r\n")
 
-	fmt.Println(headerText)
-	fmt.Println(lines)
+	request := strings.Split(lines[0], " ");
+	method := request[0]
+	target := request[1]
+	version := request[2]
+
+	host := strings.Split(lines[1], " ");
+
+	fmt.Println("Lines Length: ", len(lines))
+	fmt.Println(method)
+	fmt.Println(target)
+	fmt.Println(version)
+	fmt.Println(host)
+
+	// fmt.Println(headerText)
+	fmt.Println(lines[0])
+
+	// conn.Write() returns n, err where n is the number of bytes from your byteslice that weresuccessfully written to the connection
+	okStatus := "HTTP/1.1 200 OK\r\n\r\n"
+	notFoundStatus := "HTTP/1.1 404 Not Found\r\n\r\n"
+	total := 0
+
+	for total < len(okStatus) {
+		if (len(target) > 1) && (target != "/") {
+			_, err := conn.Write([]byte(notFoundStatus))
+			if err != nil {
+				fmt.Println("ERROR: Cannot write to connection")
+				os.Exit(1)
+			}
+		} else {
+			_, err := conn.Write([]byte(okStatus))
+			if err != nil {
+				fmt.Println("ERROR: Cannot write to connection")
+				os.Exit(1)
+			}
+		}
+		// total += n
+		os.Exit(0)
+	}
 }
