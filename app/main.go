@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bytes"
+	"strings"
 	"fmt"
 	"net"
 	"os"
@@ -40,4 +42,25 @@ func main() {
 			os.Exit(1)
 		}
 	}
+
+	// Extract URL path from HTTP request
+	buf := make([]byte, 4096)
+	n, err := conn.Read(buf)
+	if err != nil {
+		fmt.Println("ERROR: Something bad happened while readin the connection")
+		os.Exit(1)
+	}
+
+	// find size of header and body if it exists
+	headerEnd := bytes.Index(buf[:n], []byte("\r\n\r\n"))
+	headerBytes := buf[:headerEnd]
+	// bodyBytes := buf[headerEnd + 4 : n] // if body exists
+
+	// headerLines := bytes.Split(headerBytes, []byte("\r\n"))
+
+	headerText := string(headerBytes)
+	lines := strings.Split(headerText, "\r\n")
+
+	fmt.Println(headerText)
+	fmt.Println(lines)
 }
