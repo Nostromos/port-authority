@@ -6,6 +6,11 @@ import (
 	"net"
 	"os"
 	"strings"
+
+	"github.com/codecrafters-io/http-server-starter-go/logger"
+	"github.com/codecrafters-io/http-server-starter-go/parser"
+	"github.com/codecrafters-io/http-server-starter-go/response"
+	"github.com/codecrafters-io/http-server-starter-go/router"
 )
 
 // Ensures gofmt doesn't remove the "net" and "os" imports above (feel free to remove this!)
@@ -30,10 +35,7 @@ func main() {
 }
 
 func handleConn(conn net.Conn) {
-
-}
-
-
+	defer conn.Close(); // close the connection after this function returns
 	/* On connection, createa  buffer and read into it */
 	buf := make([]byte, 4096)
 	n, err := conn.Read(buf)
@@ -42,7 +44,19 @@ func handleConn(conn net.Conn) {
 		fmt.Println("ERROR: Something bad happened while readin the connection")
 		os.Exit(1)
 	}
-``
+}
+
+func readAllBytes(conn) ([]byte, err) {
+	buf := make([]byte, 4096) // arbitrary sizing. not sure what is best here
+	n, err := conn.Read(buf)
+
+	for {
+
+	}
+}
+
+	
+
 	// conn.Write() returns n, err where n is the number of bytes from your byteslice that weresuccessfully written to the connection
 	okStatus := "HTTP/1.1 200 OK\r\n\r\n"
 	notFoundStatus := "HTTP/1.1 404 Not Found\r\n\r\n"
