@@ -3,6 +3,8 @@
 </p>
 <h1 align="center"><i>Port Authority</i></h1>
 
+**Completion:** ![](https://geps.dev/progress/10)
+
 <p align="center">
   <a href="https://golang.org"><img alt="Go" src="https://img.shields.io/badge/Go-1.24-00ADD8?style=for-the-badge&logo=go&logoColor=white" /></a>
   <a href="https://app.codecrafters.io"><img alt="CodeCrafters" src="https://img.shields.io/badge/CodeCrafters-Challenge-FF6B6B?style=for-the-badge" /></a>
