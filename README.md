@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./static/dotproject-v2-header.svg" alt="Dotproject header" />
+  <img src="./http-server-go-header.svg" alt="port-authority header" />
 </p>
 <h1 align="center"><i>HTTP Server - Go</i></h1>
 
@@ -120,21 +120,21 @@ CodeCrafters will automatically test your implementation and provide feedback.
 ## Implementation Status
 
 ### Completed
-- ✅ TCP server setup and binding to port 4221
-- ✅ Concurrent connection handling with goroutines
-- ✅ Basic request reading infrastructure
+- [x] TCP server setup and binding to port 4221
+- [x] Concurrent connection handling with goroutines
+- [x] Basic request reading infrastructure
 
 ### In Progress
-- 🔄 HTTP request parsing (needs struct definition)
-- 🔄 HTTP response building (needs completion)
+- [ ] HTTP request parsing (needs struct definition)
+- [ ] HTTP response building (needs completion)
 
 ### To Do
-- ⬜ Request routing
-- ⬜ Path parameter extraction
-- ⬜ Request headers parsing
-- ⬜ Response headers
-- ⬜ File serving
-- ⬜ Compression support
+- [ ] Request routing
+- [ ] Path parameter extraction
+- [ ] Request headers parsing
+- [ ] Response headers
+- [ ] File serving
+- [ ] Compression support
 
 ## Learning Resources
 
@@ -148,10 +148,6 @@ CodeCrafters will automatically test your implementation and provide feedback.
 - The server implements HTTP/1.1 from scratch without using Go's built-in HTTP server
 - Each connection is handled in its own goroutine for concurrency
 - The implementation follows CodeCrafters stages progressively
-
-## Contributing
-
-This is a learning project built for the CodeCrafters challenge. Feel free to explore the code and learn from the implementation!
 
 ## License
 
