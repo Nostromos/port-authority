@@ -11,6 +11,9 @@
 
 ## Overview
 
+> [!NOTE]
+> Port Authority is probably a better name for a load balancer, container orchestration tool, traffic analyzer, or a container orchestration tool but it popped into my head during a commute so I guess I'm building one or all of those things eventually.
+
 **Completion:** ![](https://geps.dev/progress/10)
 
 A custom HTTP/1.1 server implementation in Go, built as part of the [CodeCrafters "Build Your Own HTTP Server"](https://app.codecrafters.io/courses/http-server/overview) challenge. This server implements the HTTP protocol from scratch, handling TCP connections, parsing HTTP requests, and serving multiple concurrent clients.
