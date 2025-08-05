@@ -1,7 +1,7 @@
 <p align="center">
   <img src="./http-server-go-header.svg" alt="port-authority header" />
 </p>
-<h1 align="center"><i>HTTP Server - Go</i></h1>
+<h1 align="center"><i>Port Authority</i></h1>
 
 <p align="center">
   <a href="https://golang.org"><img alt="Go" src="https://img.shields.io/badge/Go-1.24-00ADD8?style=for-the-badge&logo=go&logoColor=white" /></a>
