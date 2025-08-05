@@ -3,8 +3,6 @@
 </p>
 <h1 align="center"><i>Port Authority</i></h1>
 
-**Completion:** ![](https://geps.dev/progress/10)
-
 <p align="center">
   <a href="https://golang.org"><img alt="Go" src="https://img.shields.io/badge/Go-1.24-00ADD8?style=for-the-badge&logo=go&logoColor=white" /></a>
   <a href="https://app.codecrafters.io"><img alt="CodeCrafters" src="https://img.shields.io/badge/CodeCrafters-Challenge-FF6B6B?style=for-the-badge" /></a>
@@ -12,6 +10,8 @@
 </p>
 
 ## Overview
+
+**Completion:** ![](https://geps.dev/progress/10)
 
 A custom HTTP/1.1 server implementation in Go, built as part of the [CodeCrafters "Build Your Own HTTP Server"](https://app.codecrafters.io/courses/http-server/overview) challenge. This server implements the HTTP protocol from scratch, handling TCP connections, parsing HTTP requests, and serving multiple concurrent clients.
 
